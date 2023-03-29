@@ -1,0 +1,29 @@
+{
+	"PuzzleName": "Farmer-tiger-sheep-grass",
+	"Description": "tiger eat sheep, but farmer can protect sheep. Sheep eat grass if farmer not around. Only farmer can drive the boat",
+	"Roles": ["farmer", "tiger", "sheep", "grass"],
+	"InitialState": [
+		["farmer", "tiger", "sheep", "grass"],
+		[]
+	],
+	"TargetState": [
+		[],
+		["farmer", "tiger", "sheep","grass"]
+	],
+	"Travelable": ["farmer","shepherd"],
+	
+	"Rules": [
+		{
+			"RuleType":"Conflict",
+			"Roles":["tiger",["sheep"]], 
+			"Message": "Tiger ate sheep",
+			"Exception": {"RuleType": "Coexist", "Roles":["tiger",["farmer"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["sheep",["grass"]], 
+			"Message": "Sheep ate grass",
+			"Exception": {"RuleType": "Coexist", "Roles":["sheep",["farmer"]], "Exception":{}}
+		}
+	]
+}

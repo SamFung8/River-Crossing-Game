@@ -1,0 +1,23 @@
+{
+	"PuzzleName": "Farmer-tiger-sheep-grass-shepherd",
+	"Description": "",
+	"Roles": ["farmer", "tiger", "sheep", "grass" , "shepherd"],
+	"InitialState": [
+		{"farmer", "sheep", "grass" , "shepherd","tiger"},
+		[]
+	],
+	"TargetState": [
+		[],
+		["farmer", "tiger", "sheep","grass", "shepherd"]
+	],
+	"Travelable": [{"farmer"}, {"sheep"}, "grass" , "shepherd","tiger"],
+	
+	"Rules": [
+		{
+			"RuleType":"Conflict",
+			"Roles":["tiger",["sheep"]], 
+			"Message": "Tiger ate sheep",
+			"Exception": {"RuleType": "Conflict", "Roles":["farmer",["tiger"]], "Exception":{}}
+		}
+	]
+}

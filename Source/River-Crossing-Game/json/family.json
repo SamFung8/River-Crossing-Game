@@ -1,0 +1,35 @@
+{
+	"PuzzleName": "Family-Police-Criminal",
+	"Description": "father scold daughter, mother beat son, criminal hurt people without police; only father, mother & police can drive the boat",
+	"Roles": ["father", "daughter", "mother", "son", "police", "criminal"],
+	"InitialState": [
+		["father", "daughter", "mother", "son", "police", "criminal"],
+		[]
+	],
+	"TargetState": [
+		[],
+		["father", "daughter", "mother", "son", "police", "criminal"]
+	],
+	"Travelable": ["father", "mother", "police"],
+	
+	"Rules": [
+		{
+			"RuleType":"Conflict",
+			"Roles":["daughter",["father"]], 
+			"Message": "father scold daughter",
+			"Exception": {"RuleType": "Coexist", "Roles":["daughter",["mother"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["son",["mother"]], 
+			"Message": "mother beat son",
+			"Exception": {"RuleType": "Coexist", "Roles":["son",["father"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["criminal",["father", "daughter", "mother", "son"]], 
+			"Message": "criminal hurt people",
+			"Exception": {"RuleType": "Coexist", "Roles":["criminal",["police"]], "Exception":{}}
+		}
+	]
+}
