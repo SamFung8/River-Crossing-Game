@@ -1,0 +1,64 @@
+{
+	"PuzzleName": "Farmer-tiger-sheep-grass-cow-shepherd-hunter",
+	"Description": "Tiger eat sheep and cow, shepherd and farmer can protect sheep and cow. Sheep eat grass if shepherd not around. Cow eat grass if farmer not around. Hunter kill tiger if farmer and shepherd not around. farmer, shepherd and hunter can drive the boat",
+	"Roles": ["farmer", "tiger", "sheep", "grass", "cow", "shepherd", "hunter"],
+	"InitialState": [
+		["farmer", "tiger", "sheep", "grass", "cow", "shepherd", "hunter"],
+		[]
+	],
+	"TargetState": [
+		[],
+		["farmer", "tiger", "sheep", "grass", "cow", "shepherd", "hunter"]
+	],
+	"Travelable": ["farmer","shepherd","hunter"],
+	"Rules": [
+		{
+			"RuleType":"Conflict",
+			"Roles":["tiger",["sheep"]], 
+			"Message": "Tiger ate sheep",
+			"Exception": {"RuleType": "Coexist", "Roles":["tiger",["farmer"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["tiger",["sheep"]], 
+			"Message": "Tiger ate sheep",
+			"Exception": {"RuleType": "Coexist", "Roles":["tiger",["shepherd"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["sheep",["grass"]], 
+			"Message": "Sheep ate grass",
+			"Exception": {"RuleType": "Coexist", "Roles":["sheep",["shepherd"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["cow",["grass"]], 
+			"Message": "cow ate grass",
+			"Exception": {"RuleType": "Coexist", "Roles":["cow",["farmer"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["tiger",["cow"]], 
+			"Message": "Tiger ate cow",
+			"Exception": {"RuleType": "Coexist", "Roles":["tiger",["farmer"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["tiger",["cow"]], 
+			"Message": "Tiger ate cow",
+			"Exception": {"RuleType": "Coexist", "Roles":["tiger",["shepherd"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["hunter",["tiger"]], 
+			"Message": "Hunter ate tiger",
+			"Exception": {"RuleType": "Coexist", "Roles":["hunter",["farmer"]], "Exception":{}}
+		},
+		{
+			"RuleType":"Conflict",
+			"Roles":["hunter",["tiger"]], 
+			"Message": "Hunter ate tiger",
+			"Exception": {"RuleType": "Coexist", "Roles":["hunter",["shepherd"]], "Exception":{}}
+		}
+	]
+}
