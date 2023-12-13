@@ -1,14 +1,6 @@
 River Crossing Game (with customizable puzzle and solver)
 
 
-Team information:
-Group 28
-Chau Tsun Yu (56625222), Program tester
-Chau Wai Tong (56660328), Development Leader
-Chin Man Chong (56701200), Programmer
-Fung King Shun (56659723), Programmer
-Lam Kin Hei (56618753), Project Manager
-
 ------------------------Description------------------------------
 
 River crossing puzzle is a famous puzzle game. The goal of the game is typically to move all the items/characters from one land to another land. 
