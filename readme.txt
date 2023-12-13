@@ -45,9 +45,6 @@ Open the terminal, type ‘java -jar puzzle.jar’
 
 ------------------------User Guideline------------------------------
 
-Check the following demo videos for quick overview of the system:
-https://portland-my.sharepoint.com/personal/waitchau2-c_my_cityu_edu_hk/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fwaitchau2%2Dc%5Fmy%5Fcityu%5Fedu%5Fhk%2FDocuments%2FCS3343%5FGroup%5F28%5FProject%5FDemo
-
 
 --Select game mode--
 
